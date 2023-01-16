@@ -1,0 +1,26 @@
+<div class="chains__header card__section">
+  <a class="chains__arrow-back" (click)="chainsService.showChainList$.next(false)">
+    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 1L4 9L12 17" stroke="#5B978E"/>
+    </svg>
+  </a>
+  <h2 class="chains__title text-h2">Transfer from</h2>
+</div>
+<div class="chains">
+    <div class="chain" *ngFor="let element of chainList?.list">
+      <div class="chain__label">
+        <app-chain-label [chain]="getChain(element.chainSymbol)?.chain"></app-chain-label>
+      </div>
+      <ul class="chain-list">
+        <li class="chain-list__item"
+            *ngFor="let token of element.tokens"
+            (click)="selectToken(element.chainSymbol, token.key)">
+          <button class="chain-list__btn"
+                  [ngClass]="{'chain-list__btn--selected': token.isSelected}"
+                  >
+            <app-token-data [tokenKey]="token.key"></app-token-data>
+          </button>
+        </li>
+      </ul>
+    </div>
+</div>

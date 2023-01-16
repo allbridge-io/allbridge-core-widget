@@ -1,0 +1,83 @@
+@import "src/sass/typography"
+@import "src/sass/mixins"
+
+.wrapper-widget
+  border: 1px solid red
+  width: 466px
+  max-width: 100%
+  padding: 25px 0 0 0
+
+.bridge-card
+  background-color: var(--card-bg)
+  position: relative
+  border: 1px solid var(--black)
+  border-radius: 20px
+  width: 401px
+  max-width: 100%
+  height: 282px
+  margin: 0 auto
+  padding: 0 32px 0 32px
+
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    background-color: var(--black2)
+    width: 106px
+    height: 14px
+    border-radius: 0 0 13px 13px
+
+  &--chains
+    padding: 0
+    visibility: visible
+    border-radius: 25px
+
+  &__controls
+    width: 100%
+    max-width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    &--destination
+      margin-top: 15px
+      margin-bottom: 15px
+
+    &--source
+      margin-top: 28px
+
+  &__select
+    display: block
+
+  &__toggle
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-top: 17px
+
+  &__separator
+    height: 1px
+    width: 50%
+
+    &--l
+      background-image: repeating-linear-gradient(to right, var(--lines), var(--lines) 10px, transparent 10px, transparent 20px)
+
+    &--r
+      background-image: repeating-linear-gradient(to left, var(--lines), var(--lines) 10px, transparent 10px, transparent 20px)
+
+.logo
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-top: 21px
+  margin-bottom: 20px
+  &__text
+    margin-left: 12px
+    color: var(--black)
+    @extend .text-h3
+  &__icon
+    height: 30px
+
+

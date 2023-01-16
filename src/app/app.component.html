@@ -1,0 +1,56 @@
+<div class="wrapper-widget">
+  <form class="bridge-card" [ngClass]="{'hide-elem': !showChainList, 'show-elem': showChainList}" [formGroup]="bridgeService.form">
+    <div class="bridge-card__controls bridge-card__controls--source">
+      <input
+        appFloatingNumberInput
+        type="text"
+        class="bridge-card__input input"
+        formControlName="amount"
+        placeholder="0.0">
+      <app-chain-select class="bridge-card__select"
+                        [chainSymbol]="chainsService.chainStateFormValue?.sourceBlockchainId"
+                        [tokenKey]="chainsService.chainStateFormValue?.tokenFromKey"
+                        (openChainListDialog)="chainsService.openChainListDialog('source')"
+      ></app-chain-select>
+    </div>
+    <div class="bridge-card__toggle">
+      <div class="bridge-card__separator bridge-card__separator--l"></div>
+      <app-toggle-button (btnClick)="chainsService.reverseState()" [disabled]="disabledToggle"></app-toggle-button>
+      <div class="bridge-card__separator bridge-card__separator--r"></div>
+    </div>
+    <div class="bridge-card__controls  bridge-card__controls--destination">
+      <input
+        type="text"
+        class="bridge-card__input input"
+        [ngClass]="{'input--no-validate': false}"
+        appFloatingNumberInput
+        formControlName="amountReceived"
+        placeholder="0.0">
+      <app-chain-select
+        class="bridge-card__select"
+        [chainSymbol]="chainsService.chainStateFormValue?.destinationBlockchainId"
+        [tokenKey]="chainsService.chainStateFormValue?.tokenToKey"
+        [direction]="'destination'"
+        (openChainListDialog)="chainsService.openChainListDialog('destination')"
+      ></app-chain-select>
+    </div>
+    <app-main-button
+      type="button"
+      class="bridge-card__main-button"
+      [processed]="false"
+      [disabled]="false"
+      (btnClick)="bridgeService.redirectToAllbridgeCore()"
+    >
+      Send
+    </app-main-button>
+  </form>
+  <div class="bridge-card bridge-card--chains" [ngClass]="{'hide-elem': showChainList , 'show-elem': !showChainList}">
+    <app-chains-dialog [chainList]="chainsService.chainList" [typeDirection]="chainsService.typeDirection"></app-chains-dialog>
+  </div>
+  <div class="logo">
+    <div class="logo__icon">
+      <img src="../assets/icons/logo.svg" alt="logo-icon">
+    </div>
+    <span class="logo__text">Allbridge Core</span>
+  </div>
+</div>

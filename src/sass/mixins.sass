@@ -1,0 +1,52 @@
+=flex($direction, $justify, $align)
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+
+=size($size)
+  width: $size
+  height: $size
+
+=clipping_text()
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+=visually-hidden
+  +size(1px)
+  overflow: hidden
+  clip: rect(0 0 0 0)
+  position: absolute
+  border: 0
+  padding: 0
+
+=placeholder()
+  &::-webkit-input-placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+
+=media($size)
+  @media screen and (max-width: $size+px)
+    @content
+
+=large()
+  @media screen and (max-width: 1400px)
+    @content
+
+=medium()
+  @media screen and (max-width: 992px)
+    @content
+
+=small()
+  @media screen and (max-width: 768px)
+    @content
+
+=extra_small()
+  @media screen and (max-width: 576px)
+    @content

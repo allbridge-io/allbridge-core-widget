@@ -1,0 +1,82 @@
+.chains
+  overflow: scroll
+  height: 228px
+
+  &__header
+    border-bottom: none !important
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    padding-left: 35px
+    padding-bottom: 2px
+    margin-top: 20px
+    background: linear-gradient(180deg, #F9F9F9 77.08%, rgba(249, 249, 249, 0) 100%)
+
+  &__title
+    color: var(--black)
+  &__arrow-back
+    display: flex
+    padding-right: 16px
+    &:hover
+      cursor: pointer
+      svg
+        stroke: red
+
+  .chain
+    padding-top: 14px
+
+    &:not(:last-child)
+      border-bottom: 1px solid var(--lines)
+    &:last-child
+      .chain-list__item
+        &:last-child
+          .chain-list__btn
+            border-radius: 0 0 15px 15px
+
+    &__label
+      display: flex
+      padding-left: 35px
+
+    &-list
+      padding: 10px 0 0 0
+
+      &__item
+        &:first-child
+          border-radius: 6px 6px 0 0
+
+        &:last-child
+          border-radius: 0 0 6px 6px
+
+      &__btn
+        overflow: hidden
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        position: relative
+        transition: background-color .25s, box-shadow .25s
+        padding: 6px 0 6px 35px
+        &--coming-soon
+          opacity: .3
+
+        &:hover
+          background-color: rgba(var(--main-color--rgb), .1)
+
+        &--selected
+          background-color: rgba(var(--main-color--rgb), .1)
+
+        &:active
+          background-color: rgba(var(--main-color--rgb), .15)
+
+        &:disabled
+          pointer-events: none
+          opacity: .4
+
+        &:focus
+          outline: none
+
+        &.cdk-keyboard-focused
+          box-shadow: 0 0 0 1px rgba(var(--main-color--rgb), 0.35)
+
+      &__token-balance
+        color: var(--black)

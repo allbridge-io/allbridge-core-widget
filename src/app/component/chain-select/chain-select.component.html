@@ -1,0 +1,20 @@
+<button type="button" class="select__btn" [disabled]="false" (click)="openChainListDialog.emit()">
+  <div class="select-icons">
+    <span class="icon icon--token" [ngStyle]="{'background-image': 'url(' + chainsService.getTokenIcon(tokenKey) + ')'}"></span>
+    <span class="icon--blockchain-wrap">
+      <span class="icon icon--blockchain"
+            [ngClass]="getChain(chainSymbol)?.chain?.colorKey || ''"
+            [ngStyle]="{'background-image': 'url(' + chainsService.getChainIcon(chainSymbol) + ')'}"></span>
+    </span>
+  </div>
+  <div class="select-labels">
+    <span class="label--token text-body-1" *ngIf="tokenKey">{{getToken(tokenKey)?.symbol}}</span>
+    <span class="label--blockchain text-body-3" *ngIf="chainSymbol">
+      {{direction === 'source' ? 'from' : 'to'}} {{getChain(chainSymbol)?.chain?.name}}
+    </span>
+    <span class="label--empty text-body-3" *ngIf="!chainSymbol && !tokenKey">Select chain and token</span>
+  </div>
+  <svg class="arrow__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 5L8 12L15 5" stroke="#D9D9D9"/>
+  </svg>
+</button>

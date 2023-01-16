@@ -1,0 +1,100 @@
+.main-button
+  width: 100%
+  padding: 11px 8px
+  border-radius: 13px
+  transition: color .25s, background-color .25s, opacity .25s, box-shadow .25s
+  display: flex
+  align-items: center
+  justify-content: center
+
+  &--small
+    padding: 4px 20px
+    border-radius: 8px
+
+    .main-button__processed-icon
+      width: 16px
+      height: 16px
+
+    &.cdk-keyboard-focused
+      box-shadow: 0 0 0 2px rgba(var(--main-color--rgb), 0.35) !important
+
+  &--flat
+    background-color: var(--main)
+    color: var(--inverted-text)
+
+    &:hover
+      background-color: var(--main-darken-4)
+
+    &:active
+      background-color: var(--main-darken-8)
+
+    &:disabled
+      background-color: var(--main)
+      cursor: default
+      pointer-events: none
+      opacity: .3
+
+    &:focus
+      outline: none
+
+    &.cdk-keyboard-focused
+      border-color: transparent
+      box-shadow: 0 0 0 3px rgba(var(--main-color--rgb), 0.35)
+
+    &.main-button--processed
+      background-color: rgba(var(--main-color--rgb), .7)
+
+    .main-button__processed-icon-circle
+      fill: rgba(var(--white-color--rgb), .1)
+
+    .main-button__processed-icon-accent
+      fill: var(--white)
+
+  &--light
+    background-color: rgba(var(--main-color--rgb), .1)
+    color: var(--main)
+    font-weight: 400
+
+    &:hover
+      background-color: rgba(var(--main-color--rgb), .15)
+
+    &:active
+      background-color: rgba(var(--main-color--rgb), .20)
+
+    &:disabled
+      cursor: default
+      pointer-events: none
+      background-color: rgba(var(--main-color--rgb), .12)
+      opacity: .3
+
+    &:focus
+      outline: none
+
+    &.cdk-keyboard-focused
+      border-color: transparent
+      box-shadow: 0 0 0 3px rgba(var(--main-color--rgb), 0.35)
+
+    &.main-button--processed
+      background-color: rgba(var(--main-color--rgb), .1)
+
+    .main-button__processed-icon-circle
+      fill: rgba(var(--main-color--rgb), .1)
+
+    .main-button__processed-icon-accent
+      fill: var(--main)
+
+  &--processed
+    cursor: default
+    pointer-events: none
+
+  &__processed-icon
+    width: 24px
+    height: 24px
+    animation: processed-icon 1.2s infinite linear
+
+  &__processed-text
+    margin-left: 8px
+
+@keyframes processed-icon
+  100%
+    transform: rotate(360deg)

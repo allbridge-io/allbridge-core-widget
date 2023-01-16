@@ -1,0 +1,35 @@
+@import "src/sass/mixins"
+
+.toggle-button
+  +size(32px)
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: var(--black2)
+  border-radius: 50%
+  transition: background-color .25s, box-shadow .25s
+  cursor: pointer
+
+  &:hover
+    background-color: var(--black2-darken-4)
+
+  &:active
+    background-color: var(--black2-darken-8)
+
+  &:disabled
+    background-color: var(--lines)
+    cursor: default
+    pointer-events: none
+    opacity: .5
+
+  &:focus
+    outline: none
+
+  &.cdk-keyboard-focused
+    box-shadow: 0 0 0 2px rgba(var(--main-color--rgb), 0.35)
+
+  svg
+    +size(12px)
+
+    path
+      fill: var(--white)

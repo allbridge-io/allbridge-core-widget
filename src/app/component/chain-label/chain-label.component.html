@@ -1,0 +1,5 @@
+<div class="chain-label" [ngClass]="chain.colorKey" *ngIf="chain">
+  <img [src]="'/assets/chain-icons/' + chain.icon" [alt]="chain.name + ' logo'" width="15px" height="15px"
+       class="chain-label__logo">
+  <p class="chain-label__name text-body-3">{{chain.name}}</p>
+</div>

@@ -1,0 +1,7 @@
+<div class="token" *ngIf="token">
+  <img [src]="chainsService.getTokenIcon(tokenKey)" width="30"
+       height="30" alt="token icon" class="token__icon">
+  <div class="token-label">
+    <span class="token__name text-body-2">{{token.symbol}}</span>
+  </div>
+</div>

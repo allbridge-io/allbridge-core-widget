@@ -1,0 +1,21 @@
+export type DirectionType = 'source' | 'destination';
+
+export type TokensMap = {
+  [tokenKey: string]: TokenDetails;
+};
+
+export interface TokenDetails {
+  symbol: string;
+  name: string;
+  tokenAddress: string;
+  icon: string;
+  lpIcon: string;
+}
+
+export interface URLParams {
+  f?: string;
+  t?: string;
+  ft?: string;
+  tt?: string;
+  darkTheme?: boolean;
+}

@@ -1,0 +1,102 @@
+@import "src/sass/mixins"
+
+.select__btn
+  border: 1px solid var(--lines)
+  background-color: transparent
+  border-radius: 13px
+  padding: 8px 15px 9px
+  display: flex
+  align-items: center
+  width: 170px
+  height: 56px
+  transition: background-color .25s, box-shadow .25s, border-color .25s
+  cursor: pointer
+
+  &:hover
+    background-color: rgba(var(--lines-color--rgb), 0.15)
+
+    .icon--blockchain-wrap
+      background-color: var(--card-bg) !important
+
+  &:active
+    background-color: rgba(var(--lines-color--rgb), 0.3)
+
+    .icon--blockchain-wrap
+      background-color: var(--card-bg) !important
+
+  &:disabled
+    pointer-events: none
+    background-color: var(--card-bg)
+
+  &:focus
+    outline: none
+
+  &.cdk-keyboard-focused
+    border-color: transparent
+    box-shadow: 0 0 0 2px rgba(var(--main-color--rgb), 0.35)
+
+  .select-icons
+    position: relative
+    display: flex
+
+    .icon
+      border-radius: 50%
+      background-color: var(--lines)
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+
+      &--token
+        +size(28px)
+
+      &--blockchain-wrap
+        display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        bottom: -3px
+        right: -3px
+        +size(16px)
+        background-color: var(--card-bg)
+        border-radius: 50%
+        transition: background-color .25s
+
+      &--blockchain
+        display: block
+        +size(12px)
+        background-size: 9px 9px
+        background-position: 1.5px 1.5px
+
+        &.eth-color
+          background-color: rgba(var(--eth-color--rgb), .1)
+
+        &.bsc-color
+          background-color: rgba(var(--bsc-color--rgb), .1)
+
+        &.sol-color
+          background-color: rgba(var(--sol-color--rgb), .1)
+
+        &.trx-color
+          background-color: rgba(var(--trx-color--rgb), .1)
+
+  .select-labels
+    +flex(column, center, flex-start)
+    padding-left: 10px
+    flex: 1
+    overflow: hidden
+
+    .label
+      &--token
+        color: var(--black)
+
+      &--blockchain
+        color: var(--light-text)
+        margin-top: -4px
+        +clipping_text
+        text-align: left
+        width: 100%
+
+      &--empty
+        color: var(--light-text)
+        text-align: left
+        line-height: 15px

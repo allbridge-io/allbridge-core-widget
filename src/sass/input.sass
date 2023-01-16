@@ -1,0 +1,27 @@
+@import "src/sass/typography"
+@import "src/sass/mixins"
+
+.input
+  border: none
+  background-color: transparent
+  color: var(--black)
+  padding: 0
+  margin: 0
+  width: 40%
+  @extend .text-h1
+  font: 400 32px/48px 'sans-serif'
+  transition: color .25s
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  appearance: textfield
+
+  &:focus
+    outline: none
+
+  &--no-validate
+    color: var(--black) !important
+
+  +placeholder
+    color: rgba(var(--black--rgb), .8)
+    opacity: .3

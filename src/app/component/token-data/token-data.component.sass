@@ -1,0 +1,33 @@
+@import "src/sass/mixins"
+
+.token
+  display: flex
+  align-items: center
+  white-space: nowrap
+  padding-right: 5px
+  overflow: hidden
+  +extra_small
+    align-self: flex-start
+
+  &__icon
+    +size(24px)
+    margin-right: 13px
+
+  &-label
+    +flex(column, center, flex-start)
+    overflow: hidden
+
+  &__name
+    color: var(--black)
+    text-overflow: ellipsis
+    width: 100%
+    overflow: hidden
+
+  &__symbol
+    display: flex
+    align-items: center
+    color: rgba(var(--black-color--rgb), .5)
+    margin-top: -4px
+
+    .explorer__btn
+      margin-left: 4px
