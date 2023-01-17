@@ -5,93 +5,44 @@
 
 import {ChainConf} from "../app/models/chains.model";
 
-// enum ChainSymbol {
-//   GRL = 'GRL',
-//   SOL = 'SOL',
-//   TRX = 'TRX',
-// }
 enum ChainSymbol {
+  GRL = 'GRL',
   SOL = 'SOL',
   TRX = 'TRX',
-  ETH = 'ETH',
-  BSC = 'BSC',
 }
-// export const CHAIN_LIST: ChainConf[] = [
-//   {
-//     chainSymbol: ChainSymbol.GRL,
-//     name: 'Goerli',
-//     blockExplorerLink: 'https://goerli.etherscan.io',
-//     txPath: 'tx',
-//     accountPath: 'address',
-//     baseCurrency: {
-//       symbol: 'GoerliETH',
-//       decimals: 18
-//     },
-//     color: 'eth-color',
-//     icon: 'eth.svg'
-//   },
-//   {
-//     chainSymbol: ChainSymbol.SOL,
-//     name: 'Solana',
-//     blockExplorerLink: 'https://explorer.solana.com',
-//     txPath: 'tx',
-//     accountPath: 'address',
-//     paramsStr: 'cluster=devnet',
-//     baseCurrency: {
-//       symbol: 'SOL',
-//       decimals: 9
-//     },
-//     color: 'sol-color',
-//     icon: 'sol.svg'
-//   },
-//   {
-//     chainSymbol: ChainSymbol.TRX,
-//     name: 'Tron',
-//     blockExplorerLink: 'https://shasta.tronscan.org/#',
-//     txPath: 'transaction',
-//     accountPath: 'address',
-//     baseCurrency: {
-//       symbol: 'TRX',
-//       decimals: 6
-//     },
-//     color: 'trx-color',
-//     icon: 'trx.svg'
-//   }
-// ];
 
-
-
-export const CHAIN_LIST: ChainConf[] = [
+const CHAIN_LIST: ChainConf[] = [
   {
-    chainSymbol: ChainSymbol.BSC,
-    name: 'BNB Chain',
-    blockExplorerLink: 'https://bscscan.com',
+    chainSymbol: ChainSymbol.GRL,
+    name: 'Goerli',
+    blockExplorerLink: 'https://goerli.etherscan.io',
     txPath: 'tx',
     accountPath: 'address',
     baseCurrency: {
-      symbol: 'BNB',
-      decimals: 18
-    },
-    color: 'bsc-color',
-    icon: 'bsc.svg'
-  },
-  {
-    chainSymbol: ChainSymbol.ETH,
-    name: 'Ethereum',
-    blockExplorerLink: 'https://etherscan.io',
-    txPath: 'tx',
-    accountPath: 'address',
-    baseCurrency: {
-      symbol: 'ETH',
+      symbol: 'GoerliETH',
       decimals: 18
     },
     color: 'eth-color',
     icon: 'eth.svg'
   },
   {
+    chainSymbol: ChainSymbol.SOL,
+    name: 'Solana',
+    blockExplorerLink: 'https://explorer.solana.com',
+    txPath: 'tx',
+    accountPath: 'address',
+    paramsStr: 'cluster=devnet',
+    baseCurrency: {
+      symbol: 'SOL',
+      decimals: 9
+    },
+    color: 'sol-color',
+    icon: 'sol.svg'
+  },
+  {
     chainSymbol: ChainSymbol.TRX,
     name: 'Tron',
-    blockExplorerLink: 'https://tronscan.io/#',
+    blockExplorerLink: 'https://shasta.tronscan.org/#',
     txPath: 'transaction',
     accountPath: 'address',
     baseCurrency: {
@@ -100,21 +51,9 @@ export const CHAIN_LIST: ChainConf[] = [
     },
     color: 'trx-color',
     icon: 'trx.svg'
-  },
-  {
-    chainSymbol: ChainSymbol.SOL,
-    name: 'Solana',
-    blockExplorerLink: 'https://explorer.solana.com',
-    txPath: 'tx',
-    accountPath: 'address',
-    baseCurrency: {
-      symbol: 'SOL',
-      decimals: 9
-    },
-    color: 'sol-color',
-    icon: 'sol.svg'
   }
 ];
+
 
 // export const TOKEN_MAP: TokensMap = {
 //   'BSC_0XE9E7CEA3DEDCA5984780BAFC599BD69ADD087D56':
