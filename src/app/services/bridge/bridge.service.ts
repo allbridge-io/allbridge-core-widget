@@ -6,6 +6,7 @@ import {TokenDTO} from "../../models/api.model";
 import {URLParams} from "../../models";
 import {BridgeAmounts} from "../../utlis/bridge.amount";
 import {combineLatest, startWith} from "rxjs";
+import {ALLBRIDGE_CORE} from "../../constants";
 export interface SwapCalcInfo {
   sourceLiquidityFee: string;
   sourceSwap: string;
@@ -17,6 +18,7 @@ export interface SwapCalcInfo {
 })
 export class BridgeService {
   bridgeAmounts = new BridgeAmounts();
+  lastChangedInput: 'amount' | 'amountReceived' = 'amount'
   form = this._fb.group({
     amount: ['', [validateAmount(this._getAsset.bind(this))]],
     amountReceived: [''],
@@ -45,12 +47,17 @@ export class BridgeService {
         const destinationToken = this._chainsService.getSelectedToken('destination');
         this._recalculation(amount, amountReceived, sourceToken, destinationToken);
       });
+
+    this.form.controls.amount.valueChanges.subscribe(value=> {
+      this.lastChangedInput = 'amount';
+    })
+
+    this.form.controls.amountReceived.valueChanges.subscribe(value=> {
+      this.lastChangedInput = 'amountReceived';
+    })
   }
 
-
   private _recalculation(amount: string | null | undefined, amountReceived: string | null | undefined, sourceToken: TokenDTO | undefined, destinationToken: TokenDTO | undefined): void {
-    // this._errorMap.delete(Errors.INSUFFICIENT_POOL_LIQUIDITY_ERROR);
-    // this._errorMap.delete(Errors.CALCULATION_ERROR);
     this.form.controls.amount.markAsDirty();
     this.form.controls.amountReceived.markAsDirty();
     try {
@@ -72,10 +79,8 @@ export class BridgeService {
       }, {emitEvent: false});
     } catch (e) {
       if (e instanceof Error && e.message === 'Insufficient pool liquidity') {
-        // this._errorMap.set(Errors.INSUFFICIENT_POOL_LIQUIDITY_ERROR, 'Insufficient pool liquidity');
         this.form.patchValue({...this.form.value, amount, amountReceived}, {emitEvent: false});
       } else {
-        // this._errorMap.set(Errors.CALCULATION_ERROR, 'Calculation error');
         this.form.patchValue({...this.form.value, amount: '', amountReceived: ''}, {emitEvent: false});
       }
     }
@@ -109,7 +114,7 @@ export class BridgeService {
 
   createUrlWithQueryParams(queryParams: URLParams, amount: string | null, amountReceived: string | null): string {
     const {f, ft, t , tt} = queryParams;
-    let url = 'http://stage-stable-bridge-ui.web.app/?';
+    let url = ALLBRIDGE_CORE;
     if(f){
       url = url + 'f=' + f + '&';
     }
@@ -122,12 +127,15 @@ export class BridgeService {
     if(tt){
       url = url + 'tt=' + tt + '&';
     }
-    if(amount){
+    if(amount && this.lastChangedInput === 'amount'){
       url = url + 'send=' + amount + '&';
     }
-    // if(amountReceived){
-    //   url = url + 'receive=' + amountReceived + '&';
-    // }
+    if(amountReceived && this.lastChangedInput === 'amountReceived'){
+      url = url + 'receive=' + amountReceived + '&';
+    }
+    if(url.charAt(url.length - 1) === '&'){
+      return url.substring(0, url.length - 1)
+    }
     return url;
   }
 }

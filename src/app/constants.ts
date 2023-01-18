@@ -6,6 +6,7 @@ import {checkAndAddSlashToTheEnd} from "./utlis";
 
 export const API_URL = checkAndAddSlashToTheEnd(environment.api);
 
+export const ALLBRIDGE_CORE = 'https://core.allbridge.io/?'
 export const SYSTEM_PRECISION = 3;
 
 export const CHAIN_MAP: Map<ChainSymbol, Chain> = new Map();

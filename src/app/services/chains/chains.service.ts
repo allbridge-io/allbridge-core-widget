@@ -33,7 +33,6 @@ export class ChainsService {
   });
   supportedTokens = ['USDC', 'USDT', 'BUSD', 'DAI'];
 
-  // MY
   showChainList$ = new BehaviorSubject<boolean>(false);
   typeDirection: DirectionType = 'source';
   chainList?: ChainSelectorData;
@@ -69,11 +68,6 @@ export class ChainsService {
       });
       this.chainMap.set((chainSymbol as ChainSymbol), chainInfo);
     });
-
-    // if (!this.isLoaded$.value) {
-    //   this.preSelect();
-    //   this.isLoaded$.next(true);
-    // }
   }
 
   getTokenKey(chainSymbol: string, tokenAddress: string): string {
