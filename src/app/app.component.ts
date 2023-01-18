@@ -3,11 +3,25 @@ import {ChainsService} from "./services/chains/chains.service";
 import {BridgeService} from "./services/bridge/bridge.service";
 import {ActivatedRoute} from "@angular/router";
 import {ThemeService} from "./services/theme/theme.service";
+import {animate, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.sass'],
+  animations: [
+    trigger('cardAnimation', [
+
+      transition(':enter', [
+        style({ opacity: 0, visibility: 'hidden' }),
+        animate("900ms ease-out" , style({opacity: 1, visibility: 'visible'}))
+      ]),
+      transition(':leave', [
+        style({opacity: 1, visibility: 'visible' }),
+        animate("900ms ease-out", style({opacity: 0, visibility: 'hidden' }))
+      ])
+    ]),
+  ]
 })
 export class AppComponent {
   showChainList = true;
