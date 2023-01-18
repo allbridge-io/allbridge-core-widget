@@ -18,7 +18,7 @@ export interface SwapCalcInfo {
 })
 export class BridgeService {
   bridgeAmounts = new BridgeAmounts();
-  lastChangedInput: 'amount' | 'amountReceived' = 'amount'
+  lastChangedInput: 'amount' | 'amountReceived' = 'amount';
   form = this._fb.group({
     amount: ['', [validateAmount(this._getAsset.bind(this))]],
     amountReceived: [''],
@@ -50,11 +50,11 @@ export class BridgeService {
 
     this.form.controls.amount.valueChanges.subscribe(value=> {
       this.lastChangedInput = 'amount';
-    })
+    });
 
     this.form.controls.amountReceived.valueChanges.subscribe(value=> {
       this.lastChangedInput = 'amountReceived';
-    })
+    });
   }
 
   private _recalculation(amount: string | null | undefined, amountReceived: string | null | undefined, sourceToken: TokenDTO | undefined, destinationToken: TokenDTO | undefined): void {
@@ -134,7 +134,7 @@ export class BridgeService {
       url = url + 'receive=' + amountReceived + '&';
     }
     if(url.charAt(url.length - 1) === '&'){
-      return url.substring(0, url.length - 1)
+      return url.substring(0, url.length - 1);
     }
     return url;
   }
