@@ -16,10 +16,11 @@
   &__arrow-back
     display: flex
     padding-right: 16px
+    svg
+      path
+        stroke: var(--arrow-color)
     &:hover
       cursor: pointer
-      svg
-        stroke: red
 
   .chain
     padding-top: 14px
@@ -72,6 +73,7 @@
           opacity: .4
 
         &:focus
+          background-color: rgba(var(--main-color--rgb), .20)
           outline: none
 
         &.cdk-keyboard-focused

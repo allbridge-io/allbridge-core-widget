@@ -65,7 +65,6 @@ const CHAIN_LIST: ChainConf[] = [
 export const environment = {
   production: true,
   CHAIN_LIST,
-  // api: 'https://core-dev.a11bd.net',
   api: 'https://core.api.allbridgecoreapi.net',
   AWS_API: 'https://explorer-dev.a11bd.net'
 };

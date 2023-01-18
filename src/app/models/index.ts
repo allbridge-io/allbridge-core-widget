@@ -17,5 +17,5 @@ export interface URLParams {
   t?: string;
   ft?: string;
   tt?: string;
-  darkTheme?: boolean;
+  theme?: 'dark' | 'light'
 }

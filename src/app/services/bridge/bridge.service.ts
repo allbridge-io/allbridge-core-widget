@@ -1,4 +1,4 @@
-import {EventEmitter, Injectable} from "@angular/core";
+import {Injectable} from "@angular/core";
 import {FormBuilder} from "@angular/forms";
 import {checkAmount, validateAmount} from "../../utlis";
 import {ChainsService} from "../chains/chains.service";
@@ -17,11 +17,9 @@ export interface SwapCalcInfo {
 })
 export class BridgeService {
   bridgeAmounts = new BridgeAmounts();
-  recalculated$ = new EventEmitter<void>();
   form = this._fb.group({
     amount: ['', [validateAmount(this._getAsset.bind(this))]],
     amountReceived: [''],
-    destinationAddress: ['']
   });
 
   constructor(
@@ -32,7 +30,6 @@ export class BridgeService {
     combineLatest([
       this._chainsService.chainStateForm.controls['tokenFromKey'].valueChanges.pipe(startWith(null)),
       this._chainsService.chainStateForm.controls['tokenToKey'].valueChanges.pipe(startWith(null)),
-      this.recalculated$.pipe(startWith(true))
     ])
       .subscribe(([tokenFromKey, tokenToKey]) => {
         const sourceToken = this._chainsService.tokenMap.get(tokenFromKey);
