@@ -14,11 +14,11 @@ import {animate, style, transition, trigger} from "@angular/animations";
 
       transition(':enter', [
         style({ opacity: 0, visibility: 'hidden' }),
-        animate("900ms ease-out" , style({opacity: 1, visibility: 'visible'}))
+        animate("400ms ease-out" , style({opacity: 1, visibility: 'visible'}))
       ]),
       transition(':leave', [
         style({opacity: 1, visibility: 'visible' }),
-        animate("900ms ease-out", style({opacity: 0, visibility: 'hidden' }))
+        animate("400ms ease-out", style({opacity: 0, visibility: 'hidden' }))
       ])
     ]),
   ]
