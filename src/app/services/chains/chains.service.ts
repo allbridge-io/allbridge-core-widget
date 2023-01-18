@@ -33,7 +33,6 @@ export class ChainsService {
   });
   supportedTokens = ['USDC', 'USDT', 'BUSD', 'DAI'];
 
-  // MY
   showChainList$ = new BehaviorSubject<boolean>(false);
   typeDirection: DirectionType = 'source';
   chainList?: ChainSelectorData;
@@ -69,11 +68,6 @@ export class ChainsService {
       });
       this.chainMap.set((chainSymbol as ChainSymbol), chainInfo);
     });
-
-    // if (!this.isLoaded$.value) {
-    //   this.preSelect();
-    //   this.isLoaded$.next(true);
-    // }
   }
 
   getTokenKey(chainSymbol: string, tokenAddress: string): string {
@@ -206,26 +200,21 @@ export class ChainsService {
     if(!queryParams){
       return;
     }
-      const sourceChain = this.getTokenBySymbolForChain(queryParams.f as ChainSymbol, queryParams.ft);
-      const destinationChain = this.getTokenBySymbolForChain(queryParams.t as ChainSymbol, queryParams.tt);
-
-      if(!sourceChain){
-        return;
-      }
-      const fromTokenKey = this.getTokenKey(queryParams.f as ChainSymbol, sourceChain.tokenAddress);
-      if(!destinationChain){
-        return;
-      }
-      const toTokenKey = this.getTokenKey(queryParams.t as ChainSymbol, destinationChain.tokenAddress);
-
-      if(!fromTokenKey){
-        return;
-      }
-
+    const sourceChain = this.getTokenBySymbolForChain(queryParams.f as ChainSymbol, queryParams.ft);
+    const destinationChain = this.getTokenBySymbolForChain(queryParams.t as ChainSymbol, queryParams.tt);
+    let fromTokenKey = '';
+    let toTokenKey = '';
+    if(sourceChain){
+      fromTokenKey = this.getTokenKey(queryParams.f as ChainSymbol, sourceChain.tokenAddress);
+    }
+    if(destinationChain){
+      toTokenKey = this.getTokenKey(queryParams.t as ChainSymbol, destinationChain.tokenAddress);
+    }
+    if(fromTokenKey){
       this.selectChain('source', queryParams.f as ChainSymbol, fromTokenKey);
-      if(!toTokenKey){
-        return;
-      }
+    }
+    if(toTokenKey){
       this.selectChain('destination', queryParams.t as ChainSymbol, toTokenKey);
     }
+  }
 }

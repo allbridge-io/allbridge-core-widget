@@ -54,72 +54,10 @@ const CHAIN_LIST: ChainConf[] = [
   }
 ];
 
-
-// export const TOKEN_MAP: TokensMap = {
-//   'BSC_0XE9E7CEA3DEDCA5984780BAFC599BD69ADD087D56':
-//     {
-//       name: 'BUSD Token',
-//       symbol: 'BUSD',
-//       tokenAddress: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
-//       icon: '/assets/token-icons/BUSD.svg',
-//       lpIcon: '/assets/token-icons/BUSD_LP.svg'
-//     },
-//   'BSC_0X55D398326F99059FF775485246999027B3197955':
-//     {
-//       name: 'Tether USD',
-//       symbol: 'USDT',
-//       tokenAddress: '0x55d398326f99059fF775485246999027B3197955',
-//       icon: '/assets/token-icons/USDT.svg',
-//       lpIcon: '/assets/token-icons/USDT_LP.svg'
-//     },
-//   'ETH_0XDAC17F958D2EE523A2206206994597C13D831EC7':
-//     {
-//       name: 'Tether USD',
-//       symbol: 'USDT',
-//       tokenAddress: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
-//       icon: '/assets/token-icons/USDT.svg',
-//       lpIcon: '/assets/token-icons/USDT_LP.svg'
-//     },
-//   'ETH_0XA0B86991C6218B36C1D19D4A2E9EB0CE3606EB48':
-//     {
-//       name: 'USD Coin',
-//       symbol: 'USDC',
-//       tokenAddress: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-//       icon: '/assets/token-icons/USDC.svg',
-//       lpIcon: '/assets/token-icons/USDC_LP.svg'
-//     },
-//   'ETH_0X6B175474E89094C44DA98B954EEDEAC495271D0F':
-//     {
-//       name: 'Dai Stablecoin',
-//       symbol: 'DAI',
-//       tokenAddress: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
-//       icon: '/assets/token-icons/DAI.svg',
-//       lpIcon: '/assets/token-icons/DAI_LP.svg'
-//     },
-//   'TRX_TR7NHQJEKQXGTCI8Q8ZY4PL8OTSZGJLJ6T':
-//     {
-//       name: 'Tether USD',
-//       symbol: 'USDT',
-//       tokenAddress: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t',
-//       icon: '/assets/token-icons/USDT.svg',
-//       lpIcon: '/assets/token-icons/USDT_LP.svg'
-//     },
-//   'SOL_EPJFWDD5AUFQSSQEM2QN1XZYBAPC8G4WEGGKZWYTDT1V':
-//     {
-//       name: 'USD Coin',
-//       symbol: 'USDC',
-//       tokenAddress: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
-//       icon: '/assets/token-icons/USDC.svg',
-//       lpIcon: '/assets/token-icons/USDC_LP.svg'
-//     }
-// };
-
-
 export const environment = {
   production: false,
   CHAIN_LIST,
-  // api: 'https://core-dev.a11bd.net',
-  api: 'https://core.api.allbridgecoreapi.net',
+  api: 'https://core-dev.a11bd.net',
   AWS_API: 'https://explorer-dev.a11bd.net'
 };
 /*
