@@ -20,7 +20,7 @@ export class ThemeService {
   initTheme(): void {
     setTimeout(() => {
       const queryParams: URLParams = this._route.snapshot.queryParams;
-      if(queryParams.darkTheme){
+      if(queryParams.theme === 'dark'){
         this._renderer.addClass(this._document.body, 'dark-theme');
       }else {
         this._renderer.addClass(this._document.body, 'light-theme');

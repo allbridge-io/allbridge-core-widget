@@ -17,13 +17,4 @@ export class TokenDataComponent {
   get token(): TokenDTO | undefined {
     return this.chainsService.tokenMap.get(this.tokenKey);
   }
-
-  // get link(): string {
-  //   if (!this.tokenKey) {
-  //     return '';
-  //   }
-  //   const [chainSymbol] = this.tokenKey.split('_');
-  //   return this.chainsService.chainMap.get(chainSymbol as ChainSymbol)?.chain?.blockExplorer?.getAccountLink(this.token?.tokenAddress || '') || '';
-  // }
-
 }
