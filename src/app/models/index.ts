@@ -10,6 +10,7 @@ export interface TokenDetails {
   tokenAddress: string;
   icon: string;
   lpIcon: string;
+  decimals: number;
 }
 
 export interface URLParams {
