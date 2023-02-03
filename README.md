@@ -1,27 +1,21 @@
-# WidgetAllbridgeCore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
+# Allbridge Core Widget
 
-## Development server
+Core Widget is a developer-friendly tool designed to streamline cross-chain swaps with Allbridge Core for third-party websites. The widget allows users to select source/destination chain and token, enter amounts to see the estimated fee and open the full Allbridge Core UI for finishing the transfer.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To embed Allbridge Core Widget to your website use the code below:
 
-## Code scaffolding
+```html
+<iframe src="https://corewidget.allbridge.io/?f=ETH&ft=USDT&t=BSC&tt=BUSD&theme=dark"></iframe>
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+All the following parameters are optional and control widget appearance and which chain/token is pre-selected by default.
 
-## Build
+Parameters:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- `f` - source blockchain (network the assets are transferred from), can be `ETH`, `TRX`, `BSC`, `SOL` or `POL`;
+- `t` - destination blockchain (network the assets are transferred to), can be `ETH`, `TRX`, `BSC`, `SOL` or `POL`;
+- `ft` - source token (token the user sends), can be `USDT`, `USDC`, `BUSD` or `DAI`, token should be supported by Allbridge Core on the source blockchain;
+- `tt` - destination token (token the user receives), can be `USDT`, `USDC`, `BUSD` or `DAI`, token should be supported by Allbridge Core on the destination blockchain;
+- `theme` - `light` (default) or `dark`, select the one which looks better with your website.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
