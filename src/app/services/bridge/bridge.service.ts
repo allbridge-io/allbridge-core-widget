@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {FormBuilder} from "@angular/forms";
-import {checkAmount, validateAmount} from "../../utlis";
+import {checkAmount} from "../../utlis";
 import {ChainsService} from "../chains/chains.service";
 import {TokenDTO} from "../../models/api.model";
 import {URLParams} from "../../models";
@@ -20,7 +20,7 @@ export class BridgeService {
   bridgeAmounts = new BridgeAmounts();
   lastChangedInput: 'amount' | 'amountReceived' = 'amount';
   form = this._fb.group({
-    amount: ['', [validateAmount(this._getAsset.bind(this))]],
+    amount: [''],
     amountReceived: [''],
   });
 
@@ -84,11 +84,6 @@ export class BridgeService {
         this.form.patchValue({...this.form.value, amount: '', amountReceived: ''}, {emitEvent: false});
       }
     }
-  }
-
-
-  private _getAsset(): TokenDTO | undefined {
-    return this._chainsService.getSelectedToken('source');
   }
 
   redirectToAllbridgeCore(): void {
