@@ -11,9 +11,11 @@ import {ChainDetailsMapDTO, TokenDTO} from "../../models/api.model";
 import {FormBuilder, FormGroup, ValidationErrors, Validators} from "@angular/forms";
 import {CHAIN_MAP} from "../../constants";
 import {MatDialog} from '@angular/material/dialog';
-import {DirectionType, URLParams} from "../../models";
+import {DirectionType, TokensMap, URLParams} from "../../models";
 import {BehaviorSubject} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
+import {TOKEN_MAP} from "../../../environments/environment.prod";
+import {Chain} from "./constants";
 
 const DEFAULT_ICON = '/assets/icons/default.svg';
 
@@ -23,6 +25,8 @@ const DEFAULT_ICON = '/assets/icons/default.svg';
 export class ChainsService {
   chainMap: Map<ChainSymbol, ChainInfo> = new Map();
   tokenMap: Map<string, TokenDTO> = new Map();
+  localChainMap: Map<ChainSymbol, Chain> = CHAIN_MAP;
+  localTokenMap: TokensMap = TOKEN_MAP;
   chainStateForm = this._fb.group({
     tokenFromKey: [null, Validators.required],
     tokenToKey: [null, Validators.required],
