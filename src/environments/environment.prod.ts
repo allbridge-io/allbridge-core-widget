@@ -142,7 +142,7 @@ export const TOKEN_MAP: TokensMap = {
       decimals: 6
     },
   'POL_0X2791BCA1F2DE4661ED88A30C99A7A9449AA84174': {
-    name: 'USD Coin (PoS)',
+    name: 'USD Coin',
     symbol: 'USDC',
     tokenAddress: '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
     icon: '/assets/token-icons/USDC.svg',
@@ -150,7 +150,7 @@ export const TOKEN_MAP: TokensMap = {
     decimals: 6
   },
   'POL_0XC2132D05D31C914A87C6611C10748AEB04B58E8F': {
-    name: '(PoS) Tether USD',
+    name: 'Tether USD',
     symbol: 'USDT',
     tokenAddress: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
     icon: '/assets/token-icons/USDT.svg',
