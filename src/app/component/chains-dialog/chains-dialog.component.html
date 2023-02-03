@@ -7,13 +7,13 @@
   <h2 class="chains__title text-h2">Transfer from</h2>
 </div>
 <div class="chains">
-    <div class="chain" *ngFor="let element of chainList?.list">
+    <div class="chain" *ngFor="let element of sortedChainList">
       <div class="chain__label">
-        <app-chain-label [chain]="getChain(element.chainSymbol)?.chain"></app-chain-label>
+        <app-chain-label [chain]="getChainInfo(element.chainSymbol)?.chain"></app-chain-label>
       </div>
       <ul class="chain-list">
         <li class="chain-list__item"
-            *ngFor="let token of element.tokens"
+            *ngFor="let token of getSortedTokenList(element.tokens)"
             (click)="selectToken(element.chainSymbol, token.key)">
           <button class="chain-list__btn"
                   [ngClass]="{'chain-list__btn--selected': token.isSelected}"
