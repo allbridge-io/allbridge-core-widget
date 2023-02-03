@@ -6,8 +6,7 @@
 
 
 ```html
-<iframe src="https://allbridge-core-widget.web.app/?
-f=ETH&ft=USDT&t=BSC&tt=BUSD&theme=dark"></iframe>
+<iframe src="https://allbridge-core-widget.web.app/?f=ETH&ft=USDT&t=BSC&tt=BUSD&theme=dark"></iframe>
 ```
 How to use:
 
