@@ -4,7 +4,7 @@
       <path d="M12 1L4 9L12 17" stroke="none"/>
     </svg>
   </a>
-  <h2 class="chains__title text-h2">Transfer from</h2>
+  <h2 class="chains__title text-h2">Swap {{typeDirection === 'source' ? 'from' : 'to'}}</h2>
 </div>
 <div class="chains">
     <div class="chain" *ngFor="let element of sortedChainList">
