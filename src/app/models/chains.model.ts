@@ -30,6 +30,7 @@ export enum ChainSymbol {
   AURO = 'AURO',
   HRM = 'HRM',
   FUSE = 'FUSE',
+  ARB = 'ARB',
 }
 
 export interface ChainConf {

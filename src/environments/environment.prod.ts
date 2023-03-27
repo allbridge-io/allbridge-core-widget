@@ -7,6 +7,7 @@ enum ChainSymbol {
   ETH = 'ETH',
   BSC = 'BSC',
   POL = 'POL',
+  ARB = 'ARB',
 }
 
 export const CHAIN_LIST: ChainConf[] = [
@@ -48,6 +49,19 @@ export const CHAIN_LIST: ChainConf[] = [
     },
     color: 'pol-color',
     icon: 'pol.svg'
+  },
+  {
+    chainSymbol: ChainSymbol.ARB,
+    name: 'Arbitrum',
+    blockExplorerLink: 'https://arbiscan.io',
+    txPath: 'tx',
+    accountPath: 'address',
+    baseCurrency: {
+      symbol: 'ETH',
+      decimals: 18
+    },
+    color: 'arb-color',
+    icon: 'arb.svg'
   },
   {
     chainSymbol: ChainSymbol.TRX,
@@ -156,7 +170,23 @@ export const TOKEN_MAP: TokensMap = {
     icon: '/assets/token-icons/USDT.svg',
     lpIcon: '/assets/token-icons/USDT_LP.svg',
     decimals: 6
-  }
+  },
+  'ARB_0XFD086BC7CD5C481DCC9C85EBE478A1C0B69FCBB9': {
+    name: 'Tether USD',
+    symbol: 'USDT',
+    tokenAddress: '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9',
+    icon: '/assets/token-icons/USDT.svg',
+    lpIcon: '/assets/token-icons/USDT_LP.svg',
+    decimals: 6
+  },
+  'ARB_0XFF970A61A04B1CA14834A43F5DE4533EBDDB5CC8': {
+    name: 'USD Coin',
+    symbol: 'USDC',
+    tokenAddress: '0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8',
+    icon: '/assets/token-icons/USDC.svg',
+    lpIcon: '/assets/token-icons/USDC_LP.svg',
+    decimals: 6
+  },
 };
 
 export const environment = {
