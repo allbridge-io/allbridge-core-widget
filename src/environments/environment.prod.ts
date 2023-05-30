@@ -9,7 +9,7 @@ enum ChainSymbol {
   POL = 'POL',
 }
 
-export const CHAIN_LIST: ChainConf[] = [
+const CHAIN_LIST: ChainConf[] = [
   {
     chainSymbol: ChainSymbol.BSC,
     name: 'BNB Chain',

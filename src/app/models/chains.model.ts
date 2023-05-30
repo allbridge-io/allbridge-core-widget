@@ -21,6 +21,7 @@ export enum ChainSymbol {
   SOL = 'SOL',
   TRX = 'TRX',
   POL = 'POL',
+  MUM = 'MUM',
   ETH = 'ETH',
   HECO = 'HECO',
   BSC = 'BSC',
@@ -30,6 +31,8 @@ export enum ChainSymbol {
   AURO = 'AURO',
   HRM = 'HRM',
   FUSE = 'FUSE',
+  ARB = 'ARB',
+  SPL = 'SPL',
 }
 
 export interface ChainConf {
