@@ -15,7 +15,7 @@ Parameters:
 
 - `f` - source blockchain (network the assets are transferred from), can be `ETH`, `TRX`, `BSC`, `SOL` or `POL`;
 - `t` - destination blockchain (network the assets are transferred to), can be `ETH`, `TRX`, `BSC`, `SOL` or `POL`;
-- `ft` - source token (token the user sends), can be `USDT`, `USDC`, `BUSD` or `DAI`, token should be supported by Allbridge Core on the source blockchain;
-- `tt` - destination token (token the user receives), can be `USDT`, `USDC`, `BUSD` or `DAI`, token should be supported by Allbridge Core on the destination blockchain;
+- `ft` - source token (token the user sends), can be `USDT`, `USDC`, or `BUSD`, token should be supported by Allbridge Core on the source blockchain;
+- `tt` - destination token (token the user receives), can be `USDT`, `USDC`, or `BUSD`, token should be supported by Allbridge Core on the destination blockchain;
 - `theme` - `light` (default) or `dark`, select the one which looks better with your website.
 
